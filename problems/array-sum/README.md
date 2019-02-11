@@ -7,3 +7,10 @@ array_sum([1,2,[3,4,[5]]])
 
 would return 15. 
 
+_.sum(_.flattenDeep([1,2,[3,4,[5]]]))
+
+function flat(arr) {
+  return arr.reduce(function (before, current) {
+    return before + (Array.isArray(current) ? flatten2(current) : current);
+  }, 0);
+}
