@@ -11,3 +11,30 @@ A few English words also 'Atbash' into other English words: "irk"="rip", "low"="
 (https://en.wikipedia.org/wiki/Atbash)
 
 
+```
+var sub = function(text, original = original1, substitute = substitute1) {
+
+const org = original.split('');
+const sub = substitute.split('');
+	var newText = '';   
+	for(var i = 0; i<text.length; i++) {
+		const index = org.findIndex((a) => a === text[i]);
+		newText += sub[index];
+	}
+return newText;
+}
+```
+
+```
+var sub = function(text, original = original1, substitute = substitute1) {
+	const org = _.split(original, '');
+	const sub = _.split(substitute, '');
+	let newText = '';   
+    _.each(text, (a) => { 
+        const index = _.findIndex(org, (b) => b === a);
+        newText += sub[index];
+	})
+	
+	return newText;
+}
+```
